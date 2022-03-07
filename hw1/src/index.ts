@@ -8,7 +8,7 @@ import { renderToast } from './lib.js'
 // eslint-disable-next-line no-constant-condition
 if(typeof window) {
   window.addEventListener('DOMContentLoaded', () => {
-    renderUserBlock('0')
+    renderUserBlock('Wade Warren', '/img/avatar.png', 0)
     renderSearchFormBlock()
     renderSearchStubBlock()
     renderToast(
