@@ -1,6 +1,16 @@
 import { renderBlock } from './lib.js'
 
 export function renderSearchFormBlock () {
+  interface SearchFormData {
+    city: string,
+    checkInDate: string,
+    checkOutDate: string
+  }
+  const test: SearchFormData = {
+    city: 'Санкт-Петербург',
+    checkInDate: '2021-05-11',
+    checkOutDate: '2021-05-13'
+  }
   renderBlock(
     'search-form-block',
     `
@@ -9,7 +19,7 @@ export function renderSearchFormBlock () {
         <div class="row">
           <div>
             <label for="city">Город</label>
-            <input id="city" type="text" disabled value="Санкт-Петербург" />
+            <input id="city" type="text" disabled value=${test.city} />
             <input type="hidden" disabled value="59.9386,30.3141" />
           </div>
           <!--<div class="providers">
@@ -20,11 +30,11 @@ export function renderSearchFormBlock () {
         <div class="row">
           <div>
             <label for="check-in-date">Дата заезда</label>
-            <input id="check-in-date" type="date" value="2021-05-11" min="2021-05-11" max="2021-06-30" name="checkin" />
+            <input id="check-in-date" type="date" value=${test.checkInDate} min=${test.checkInDate} max="2021-06-30" name="checkin" />
           </div>
           <div>
             <label for="check-out-date">Дата выезда</label>
-            <input id="check-out-date" type="date" value="2021-05-13" min="2021-05-11" max="2021-06-30" name="checkout" />
+            <input id="check-out-date" type="date" value=${test.checkOutDate} min=${test.checkInDate} max="2021-06-30" name="checkout" />
           </div>
           <div>
             <label for="max-price">Макс. цена суток</label>
