@@ -30,3 +30,38 @@ export function renderToast (message, action) {
     }
   }
 }
+
+export function localStorageHandler() {
+  const returnObj: string = JSON.parse(localStorage.getItem('user'))
+  for(const key of Object.keys(returnObj)) {
+    switch (key) {
+    case 'username' :
+    case 'avatarUrl' :
+      getUserData(key, localStorage.getItem(key))
+      break;
+    case 'favoritesAmount' :
+      getFavoritesAmount(key, localStorage.getItem(key))
+      break
+    default:
+      break;
+    }
+  }
+}
+export const dataFromLocal = {}
+/**
+ * 
+ * @param params Ключ : значение из localStorage
+ * @param dataFromLocal Пустой массив в который передать params
+ */
+function getUserData(key, params:unknown) {
+  return dataFromLocal[key] = params
+}
+/**
+ * 
+ * @param params Ключ : значение из localStorage
+ * @param dataFromLocal Пустой массив в который передать params
+ */
+function getFavoritesAmount(key, params:unknown) {
+  return dataFromLocal[key] = params
+}
+
