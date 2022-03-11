@@ -41,11 +41,16 @@ export function renderSearchFormBlock () {
             <input id="max-price" type="text" value="" name="price" class="max-price" />
           </div>
           <div>
-            <div><button>Найти</button></div>
+            <div><button id="btnSearch">Найти</button></div>
           </div>
         </div>
       </fieldset>
     </form>
     `
   )
+  const btnSearch = document.getElementById('btnSearch')
+  btnSearch.addEventListener('click', (event) => {
+    console.log(test);
+    event.preventDefault()
+  })
 }
