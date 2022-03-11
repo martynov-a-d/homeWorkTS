@@ -37,10 +37,10 @@ export function localStorageHandler() {
     switch (key) {
     case 'username' :
     case 'avatarUrl' :
-      getUserData(key, localStorage.getItem(key))
+      getUserData(key, returnObj[key])
       break;
     case 'favoritesAmount' :
-      getFavoritesAmount(key, localStorage.getItem(key))
+      getFavoritesAmount(key, returnObj[key])
       break
     default:
       break;
@@ -53,7 +53,7 @@ export const dataFromLocal = {}
  * @param params Ключ : значение из localStorage
  * @param dataFromLocal Пустой массив в который передать params
  */
-function getUserData(key, params:unknown) {
+function getUserData(key: string, params: unknown) {
   return dataFromLocal[key] = params
 }
 /**
@@ -61,7 +61,7 @@ function getUserData(key, params:unknown) {
  * @param params Ключ : значение из localStorage
  * @param dataFromLocal Пустой массив в который передать params
  */
-function getFavoritesAmount(key, params:unknown) {
+function getFavoritesAmount(key: string, params: unknown) {
   return dataFromLocal[key] = params
 }
 
